@@ -2,8 +2,12 @@
 
 int main()
 {
+    FILE *input = fopen("input.txt", "r");
+    FILE *output = fopen("output.txt", "w");
+
     int num, i, answer;
-    scanf("%d", &num);
+    fscanf(input, "%d", &num);
+
     for (i = 2; i < num; i ++)
     {
         if (num == 2)
@@ -20,15 +24,18 @@ int main()
             answer = 0;
         }
     }
-    
+
     if (answer == 0)
     {
-        printf("YES");
+        fprintf(output, "YES");
     }    
     else
     {
-        printf("NO");
+        fprintf(output, "NO");
     }
+
+    fclose(input);
+    fclose(output);
     
     return 0;
 }
