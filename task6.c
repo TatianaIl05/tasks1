@@ -4,6 +4,7 @@ int main()
 {
     int n, i = 1, min = 10001, max = -10001, number, position1, position2;
     scanf("%d", &n);
+    
     while (i <= n)
     {
         scanf("%d", &number);
@@ -19,6 +20,8 @@ int main()
         }
         i++;
     }
+    
     printf("%d %d %d %d", min, position1, max, position2);
+    
     return 0;
 }
