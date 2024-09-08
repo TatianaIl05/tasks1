@@ -5,6 +5,7 @@ int main()
     int h, m, s, k;
     scanf("%d %d %d %d", &h, &m, &s, &k);
     s += k;
+    
     if (s >= 60)
     {
         m += s/60;
@@ -19,6 +20,8 @@ int main()
     {
         h %= 24;
     }
+    
     printf("%d %d %d", h, m, s);
+    
     return 0;
 }
