@@ -6,6 +6,7 @@ int main()
     answer = 1000000000;
     answer = answer * 1000000000;
     scanf("%lld", &v);
+    
     for (int i = 1; i <= v; i++)
     {
         for (int m = i; m <= v; m++)
@@ -19,8 +20,11 @@ int main()
             }
         }
     }
+    
     answer %= 1000000000;
     answer %= 1000000000;
+    
     printf("%lld", answer);
+    
     return 0;
 }
