@@ -20,6 +20,7 @@ int main()
             answer = 0;
         }
     }
+    
     if (answer == 0)
     {
         printf("YES");
@@ -28,5 +29,6 @@ int main()
     {
         printf("NO");
     }
+    
     return 0;
 }
