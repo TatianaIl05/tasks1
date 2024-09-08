@@ -2,12 +2,15 @@
 
 int main()
 {
+    FILE *input = fopen("input.txt", "r");
+    FILE *output = fopen("output.txt", "w");
+
     int n, i = 1, min = 10001, max = -10001, number, position1, position2;
-    scanf("%d", &n);
+    fscanf(input, "%d", &n);
     
     while (i <= n)
     {
-        scanf("%d", &number);
+        fscanf(input, "%d", &number);
         if (number > max)
         {
             max = number;
@@ -21,7 +24,10 @@ int main()
         i++;
     }
     
-    printf("%d %d %d %d", min, position1, max, position2);
-    
+    fprintf(output, "%d %d %d %d", min, position1, max, position2);
+
+    fclose(input);
+    fclose(output);
+
     return 0;
 }
