@@ -2,15 +2,21 @@
 
 int main()
 {
+    FILE *input = fopen("input.txt", "r");
+    FILE *output = fopen("output.txt", "w");
+
     int n, sum = 0;
-    scanf("%d", &n);
+    fscanf(input, "%d", &n);
 
     for (int i = 1; i <= n; i++)
     {
         sum += i;
     }
     
-    printf("%d", sum);
+    fprintf(output, "%d", sum);
+
+    fclose(input);
+    fclose(output);
 
     return 0;
 }
