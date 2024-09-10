@@ -10,14 +10,24 @@ int main()
     fscanf(input, "%d", &n);
     fscanf(input, "%d %d %d %d", &m, &p, &k, &l);
 
-    double num_of_flats = floor(m/(l*(p-1) + (k-1)));
-    int entran = (int)(floor(ceil(n/num_of_flats)/l) + 1);
-    int level = (int)ceil(n/num_of_flats) % l;
+    int num_of_flats = m/(l*(p-1) + (k-1));
+    int level;
+    int entran;
+    if (n % (num_of_flats*l) == 0)
+    {
+        level = n/l;
+        entran = n/(num_of_flats*l);
+    }
+    else
+    {
+        level = (n % (num_of_flats*l)) / num_of_flats;
+        entran = n/(num_of_flats*l) + 1;
+    }
 
     fprintf(output, "%d %d", entran, level);
 
     fclose(input);
     fclose(output);
-    
+
     return 0;
 }
